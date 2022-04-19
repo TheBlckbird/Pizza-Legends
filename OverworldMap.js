@@ -23,15 +23,15 @@ window.OverworldMaps = {
         upperSrc: "/images/maps/DemoUpper.png",
         gameObjects: {
             hero: new Person({
+                isPLayerControlled: true,
                 x: utils.withGrid(5),
-                y: utils.withGrid(6),
-                isPlayerControlled: true
+                y: utils.withGrid(6)
             }),
-            npc1: new Person({
-                x: utils.withGrid(7),
-                y: utils.withGrid(9),
-                src: "/images/characters/people/npc1.png"
-            })
+            // npc1: new Person({
+            //     x: utils.withGrid(7),
+            //     y: utils.withGrid(9),
+            //     src: "/images/characters/people/npc1.png"
+            // })
         }
     },
     Kitchen: {
@@ -39,9 +39,9 @@ window.OverworldMaps = {
         upperSrc: "/images/maps/KitchenUpper.png",
         gameObjects: {
             hero: new Person({
+                isPLayerControlled: true,
                 x: utils.withGrid(3),
-                y: utils.withGrid(5),
-                isPlayerControlled: true
+                y: utils.withGrid(5)
             }),
             npc1: new Person({
                 x: utils.withGrid(9),
