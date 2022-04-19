@@ -5,6 +5,15 @@ class Overworld {
         this.ctx = this.canvas.getContext('2d')
     }
 
+    startGameLoop() {
+        const step = () => {
+            requestAnimationFrame(() => {
+                step()
+            })
+        }
+        step()
+    }
+
     init() {
         console.log("Hello friendly Overworld!", this)
 
@@ -25,11 +34,6 @@ class Overworld {
             y: 9,
             src: "/images/characters/people/npc1.png"
         })
-
-        setTimeout(() => {
-            hero.sprite.draw(this.ctx)
-            npc1.sprite.draw(this.ctx)
-        }, 200)
 
     }
 
