@@ -16,6 +16,10 @@ class Sprite {
         }
         this.currentAnimation = config.curentAnimation || "idleDown"
         this.currentAnimationFrame = 0
+
+        // Reference to the GameObject
+        this.gameObject = config.gameObject
+
     }
 
     draw(ctx) {
