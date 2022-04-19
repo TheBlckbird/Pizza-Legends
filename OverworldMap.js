@@ -17,4 +17,9 @@ class OverworldMap {
     }
 }
 
-window.OverworldMaps
+window.OverworldMaps = {
+    DemoRoom: {
+        lowerSrc: "/images/maps/DemoLower.png",
+        upperSrc: "/images/maps/DemoUpper.png"
+    }
+}
