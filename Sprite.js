@@ -20,12 +20,14 @@ class Sprite {
 
         // Configure Animation & Initial State
         this.animations = config.animations || {
-            "idle-down": [
-                [0,0]
-            ]
+            "idle-down": [ [0,0] ],
+            "walk-down": [ [1,0], [0,0], [3,0], [0,0] ],
         }
-        this.currentAnimation = config.curentAnimation || "idleDown"
+        this.currentAnimation = config.curentAnimation || "idle-down"
         this.currentAnimationFrame = 0
+
+        this.animationFrameLimit = 16
+        this.animationFrameProgress = this.animationFrameLimit
 
         // Reference to the GameObject
         this.gameObject = config.gameObject
