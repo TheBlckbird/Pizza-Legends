@@ -8,7 +8,18 @@ class Overworld {
 
     startGameLoop() {
         const step = () => {
-            console.log("hi")
+
+            // Draw lowerImage
+            this.map.drawLowerImage(this.ctx)
+
+            // Draw the GameObjects
+            Object.values(this.map.gameObjects).forEach(object => {
+                object.sprite.draw(this.ctx)
+            })
+
+            // Draw upperImage
+            this.map.drawUpperImage(this.ctx)
+
             requestAnimationFrame(step)
         }
         step()
