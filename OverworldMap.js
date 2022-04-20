@@ -48,7 +48,7 @@ class OverworldMap {
     moveWall(wasX, wasY, direction) {
         this.removeWall(wasX, wasY)
         const {x, y} = utils.nextPosition(wasX, wasY, direction)
-        addWall(x, y)
+        this.addWall(x, y)
     }
 }
 
