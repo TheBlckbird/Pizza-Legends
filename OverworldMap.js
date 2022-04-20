@@ -25,6 +25,15 @@ class OverworldMap {
         )
     }
 
+    mountObjects() {
+        Object.values(this.gameObjects).forEach(o => {
+
+            // Determine if this object should actually be mounted
+
+            o.mount(this)
+        })
+    }
+
     isSpaceTaken(currentX, currentY, direction) {
         const {x,y} = utils.nextPosition(currentX, currentY, direction)
         return this.walls[`${x},${y}`] || false
