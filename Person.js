@@ -14,22 +14,36 @@ class Person extends GameObject {
     }
 
     update(state) {
-        this.updatePosition()
+        if (this.movingProgressRemaining > 0) {
+            this.updatePosition()
+        } else {
+
+        }
         this.updateSprite(state)
 
         if (this.isPlayerControlled && this.movingProgressRemaining === 0 && state.arrow) {
-            this.direction = state.arrow
-            console.log(state.map.isSpaceTaken(this.x, this.y, this.direction))
-            this.movingProgressRemaining = 16
+            this.startBehavior(state, {
+                type: "walk",
+                direction: state.arrow
+            })
         }
     }
 
-    updatePosition() {
-        if (this.movingProgressRemaining > 0) {
-            const [property, change] = this.directionUpdate[this.direction]
-            this[property] += change
-            this.movingProgressRemaining -= 1
+    startBehavior(state, behavior) {
+        this.direction = behavior.direction
+        if (behavior.type === "walk") {
+            if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+                return
+            }
+            this.movingProgressRemaining = 16
         }
+        
+    }
+
+    updatePosition() {
+        const [property, change] = this.directionUpdate[this.direction]
+        this[property] += change
+        this.movingProgressRemaining -= 1
     }
 
     updateSprite(state) {
