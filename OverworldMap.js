@@ -26,11 +26,14 @@ class OverworldMap {
     }
 
     mountObjects() {
-        Object.values(this.gameObjects).forEach(o => {
+        Object.keys(this.gameObjects).forEach(key => {
+
+            let object = this.gameObjects[key]
+            object.id  = key
 
             // Determine if this object should actually be mounted
 
-            o.mount(this)
+            object.mount(this)
         })
     }
 
@@ -66,6 +69,11 @@ window.OverworldMaps = {
                 x: utils.withGrid(7),
                 y: utils.withGrid(9),
                 src: "/images/characters/people/npc1.png"
+            }),
+            npc2: new Person({
+                x: utils.withGrid(3),
+                y: utils.withGrid(7),
+                src: "/images/characters/people/npc2.png"
             })
         },
         walls: {
