@@ -8,6 +8,8 @@ class OverworldMap {
 
         this.upperImage = new Image()
         this.upperImage.src = config.upperSrc
+
+        this.isCutscenePlaying = false
     }
 
     drawLowerImage(ctx, cameraPerson) {
