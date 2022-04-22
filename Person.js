@@ -44,6 +44,10 @@ class Person extends GameObject {
         const [property, change] = this.directionUpdate[this.direction]
         this[property] += change
         this.movingProgressRemaining -= 1
+
+        if (this.movingProgressRemaining === 0) {
+            
+        }
     }
 
     updateSprite(state) {
