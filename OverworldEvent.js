@@ -16,6 +16,15 @@ class OverworldEvent {
             type: "walk",
             direction: this.event.direction,
         })
+
+        const completeHandler = e => {
+            if (e.detail.whoId === who.id) {
+                utils.removeEventListener("PersonWalkingComplete", completeHandler)
+                resolve()
+            }
+        }
+
+        document.addEventListener("PersonWalkingComplete", completeHandler)
     }
 
     init() {
