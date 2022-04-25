@@ -36,6 +36,7 @@ class Person extends GameObject {
 
             state.map.moveWall(this.x, this.y, this.direction)
             this.movingProgressRemaining = 16
+            this.updateSprite(state)
         }
         
     }
