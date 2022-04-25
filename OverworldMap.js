@@ -44,6 +44,13 @@ class OverworldMap {
         return this.walls[`${x},${y}`] || false
     }
 
+    startCutscene(events) {
+        this.isCutscenePlaying = true
+
+
+        this.isCutscenePlaying = false
+    }
+
     addWall(x, y) {
         this.walls[`${x},${y}`] = true
     }
