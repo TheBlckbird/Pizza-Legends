@@ -1,0 +1,12 @@
+@use "variables" as v;
+
+.TextMessage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 36px;
+    font-size: 12px;
+    padding: 4px;
+    background: v.$menu-background;
+}
