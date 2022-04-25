@@ -45,7 +45,7 @@ class OverworldEvent {
     }
 
     textMessage(resolve) {
-        const message = new this.textMessage({
+        const message = new TextMessage({
             text: this.event.text,
             onComplete: () => resolve(),
         })
