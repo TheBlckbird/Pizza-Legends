@@ -6,6 +6,10 @@ $menu-border-color: #A48465;
 $menu-font-color: #3A160D;
 $menu-seleected-background: #7FC2FF;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
     background: #333;
     padding: 0;
