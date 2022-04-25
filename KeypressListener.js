@@ -18,4 +18,9 @@ class KeypressListener {
         document.addEventListener("keydown", this.keyDownFunction)
         document.addEventListener("keyup", this.keyUpFunction)
     }
+
+    unbin() {
+        document.removeEventListener("keydown", this.keyDownFunction)
+        document.removeEventListener("keyup", this.keyUpFunction)
+    }
 }
