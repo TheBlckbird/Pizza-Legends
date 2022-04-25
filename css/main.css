@@ -4,11 +4,24 @@
   right: 0;
   bottom: 0;
   height: 36px;
-  font-size: 12px;
   padding: 4px;
   background: #FFE8D2;
   border-top: 1px solid #A48465;
   color: #3A160D;
+}
+.TextMessage_p {
+  margin: 0;
+  font-size: 12px;
+}
+.TextMessage_button {
+  margin: 0;
+  font-size: 8px;
+  padding: 0;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 * {
