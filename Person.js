@@ -38,7 +38,14 @@ class Person extends GameObject {
             this.movingProgressRemaining = 16
             this.updateSprite(state)
         }
-        
+
+        if (behavior.type === "stand") {
+            setTimeout(() => {
+                utils.emitEvent("PersonStandComplete", {
+                    whoId: this.id,
+                })
+            }, behavior.time);
+        }
     }
 
     updatePosition() {
