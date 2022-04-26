@@ -19,6 +19,7 @@ class TextMessage {
         })
 
         this.actionListener = new KeypressListener("Enter", () => {
+            this.actionListener.unbind()
             this.done()
         })
 
