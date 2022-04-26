@@ -18,6 +18,11 @@ class TextMessage {
             this.done()
         })
 
+        this.actionListener = new KeypressListener("Enter", () => {
+            console.log("Enter!")
+            // this.done()
+        })
+
     }
 
     done() {
