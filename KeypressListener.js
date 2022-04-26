@@ -1,8 +1,8 @@
 class KeypressListener {
     constructor(keyCode, callback) {
-        this.keySafe = true
+        let keySafe = true
         this.keyDownFunction = function(event) {
-            if (event.keyCode === keyCode) {
+            if (event.code === keyCode) {
                 if (keySafe) {
                     keySafe = false
                     callback()
@@ -10,7 +10,7 @@ class KeypressListener {
             }
         }
         this.keyUpFunction = function(event) {
-            if (event.keyCode === keyCode) {
+            if (event.code === keyCode) {
                 keySafe = true
             }
         }
@@ -19,7 +19,7 @@ class KeypressListener {
         document.addEventListener("keyup", this.keyUpFunction)
     }
 
-    unbin() {
+    unbind() {
         document.removeEventListener("keydown", this.keyDownFunction)
         document.removeEventListener("keyup", this.keyUpFunction)
     }
